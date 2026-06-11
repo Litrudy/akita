@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-fr="Services — Akita Group · 秋田集团" data-zh="服务 — 秋田集团 Akita Group">Services — Akita Group · 秋田集团</title>
+  <meta name="description" content="Akita Group services: vessel and port agency, project and heavy cargo, customs clearance, freight forwarding, warehousing and mining transport across West and Central Africa.">
+  <meta name="theme-color" content="#f7f8fc">
+
+  <script>
+    (function () {
+      var t = localStorage.getItem('akita-theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+      var l = localStorage.getItem('akita-lang');
+      if (l) document.documentElement.lang = (l === 'zh' ? 'zh-CN' : l);
+    })();
+  </script>
+
+  <link rel="icon" type="image/png" href="images/us/favicon.png">
+  <link rel="apple-touch-icon" href="images/us/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;600&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-head" id="top">
+  <div class="head-inner">
+    <a class="brand" href="index.html" aria-label="Akita Group — home">
+      <img class="brand-logo" src="images/us/akita-mark.png" alt="">
+      <span class="brand-text">AKITA<span class="brand-cn">秋田集团</span></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <div class="nav-item">
+        <a href="about.html" data-fr="À propos" data-zh="关于我们">About</a>
+        <div class="nav-sub">
+          <a href="about.html#profile" data-fr="Profil du groupe" data-zh="集团简介">Company profile</a>
+          <a href="about.html#milestones" data-fr="Jalons" data-zh="发展历程">Milestones</a>
+          <a href="about.html#team" data-fr="Direction" data-zh="管理团队">Leadership</a>
+          <a href="about.html#partners" data-fr="Partenaires" data-zh="合作伙伴">Partners</a>
+          <a href="about.html#foundation" data-fr="Mission &amp; vision" data-zh="使命愿景">Mission &amp; vision</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="services.html" data-fr="Services" data-zh="服务">Services</a>
+        <div class="nav-sub">
+          <a href="services.html#agency" data-fr="Agence navire &amp; portuaire" data-zh="船舶与港口代理">Vessel &amp; port agency</a>
+          <a href="services.html#project" data-fr="Fret de projet &amp; lourd" data-zh="项目与重型货物">Project &amp; heavy cargo</a>
+          <a href="services.html#customs" data-fr="Dédouanement" data-zh="清关服务">Customs clearance</a>
+          <a href="services.html#freight" data-fr="Transit de fret" data-zh="货运代理">Freight forwarding</a>
+          <a href="services.html#warehouse" data-fr="Entreposage &amp; parc" data-zh="仓储与堆场">Warehousing &amp; yard</a>
+          <a href="services.html#mining" data-fr="Transport minier" data-zh="矿业运输">Mining &amp; ore transport</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="operations.html" data-fr="Opérations" data-zh="运营">Operations</a>
+        <div class="nav-sub">
+          <a href="operations.html#network" data-fr="Réseau portuaire" data-zh="港口网络">Port network</a>
+          <a href="operations.html#live" data-fr="Sur le terrain" data-zh="运营现场">On the ground</a>
+          <a href="operations.html#fleet" data-fr="Flotte &amp; équipements" data-zh="车队与设备">Fleet &amp; assets</a>
+          <a href="operations.html#warehouses" data-fr="Entrepôts" data-zh="仓储设施">Warehouses</a>
+          <a href="operations.html#hse" data-fr="HSE &amp; conformité" data-zh="HSE 与合规">HSE &amp; compliance</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="cases.html" data-fr="Cas" data-zh="案例">Cases</a>
+        <div class="nav-sub">
+          <a href="cases.html#projects" data-fr="Projets livrés" data-zh="项目案例">Delivered projects</a>
+          <a href="cases.html#contracts" data-fr="Contrats long terme" data-zh="长期合约">Long-term contracts</a>
+          <a href="cases.html#testimonials" data-fr="Témoignages" data-zh="客户评价">Testimonials</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="contact.html" data-fr="Contact" data-zh="联系我们">Contact</a>
+        <div class="nav-sub">
+          <a href="contact.html#quote" data-fr="Demander un devis" data-zh="获取报价">Get a quote</a>
+          <a href="contact.html#tracking" data-fr="Suivi de cargaison" data-zh="货物追踪">Cargo tracking</a>
+          <a href="contact.html#offices" data-fr="Nos bureaux" data-zh="办事处">Offices</a>
+          <a href="contact.html#faq" data-fr="FAQ" data-zh="常见问题">FAQ</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="head-tools">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="en" class="is-active">EN</button>
+        <span class="lang-sep" aria-hidden="true">/</span>
+        <button type="button" data-lang="fr">FR</button>
+        <span class="lang-sep" aria-hidden="true">/</span>
+        <button type="button" data-lang="zh">中文</button>
+      </div>
+
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+        <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2"/>
+          <path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.2 5.2l1.9 1.9M16.9 16.9l1.9 1.9M18.8 5.2l-1.9 1.9M7.1 16.9l-1.9 1.9"/>
+        </svg>
+        <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <path d="M20.2 14.2A8.2 8.2 0 0 1 9.8 3.8a8.2 8.2 0 1 0 10.4 10.4Z"/>
+        </svg>
+      </button>
+
+      <a class="btn btn-solid head-cta" href="contact.html#quote" data-fr="Nous contacter" data-zh="立即咨询">Enquire now</a>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ PAGE BANNER ============ -->
+  <section class="page-banner">
+    <div class="banner-deco" aria-hidden="true">
+      <span class="banner-mark">Services</span>
+      <svg class="banner-art" viewBox="0 0 560 440" fill="none">
+        <g class="ba-ring">
+          <circle cx="350" cy="220" r="160"/>
+          <circle cx="350" cy="220" r="118" stroke-dasharray="2 8"/>
+          <path d="M350 36v44M350 360v44M166 220h44M490 220h44"/>
+        </g>
+        <g class="ba-routes">
+          <path d="M30 360 Q200 240 350 220"/>
+          <path d="M350 220 Q470 150 545 60"/>
+          <path d="M90 90 Q240 170 350 220"/>
+        </g>
+        <g class="ba-nodes">
+          <circle class="pulse" cx="350" cy="220" r="13"/>
+          <circle cx="350" cy="220" r="5"/>
+          <circle cx="90" cy="90" r="4"/>
+          <circle cx="30" cy="360" r="4"/>
+          <circle cx="545" cy="60" r="4"/>
+        </g>
+        <text class="ba-coord" x="372" y="204">09°31′N · 13°42′W</text>
+      </svg>
+    </div>
+    <div class="container">
+      <p class="crumb mono reveal">
+        <a href="index.html" data-fr="Accueil" data-zh="首页">Home</a>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span class="here" data-fr="Services" data-zh="服务">Services</span>
+      </p>
+      <h1 class="page-title">
+        <span class="line reveal d1" data-fr="Des services logistiques" data-zh="一站式物流服务，">End-to-end logistics,</span>
+        <span class="line reveal d2"><em data-fr="maîtrisés de bout en bout." data-zh="每个环节都由我们掌控。">owned at every step.</em></span>
+      </h1>
+      <p class="page-sub reveal d3"
+         data-fr="De l'arrivée du navire à la livraison finale — nous possédons la capacité à chaque étape : licences, flotte, entrepôts et équipes douanières."
+         data-zh="从船舶抵港到最终交付 —— 执照、车队、仓储与清关团队全部自有，每个环节亲自掌控。">
+        From vessel arrival to final delivery — we own the capability at every step: licenses, fleet, warehouses and customs teams.</p>
+    </div>
+  </section>
+
+  <!-- ============ SUBNAV ============ -->
+  <nav class="subnav" aria-label="Services sections">
+    <div class="container subnav-in">
+      <a href="#agency"><span class="snum">01</span><span data-fr="Agence" data-zh="港口代理">Agency</span></a>
+      <a href="#project"><span class="snum">02</span><span data-fr="Fret de projet" data-zh="项目货物">Project cargo</span></a>
+      <a href="#customs"><span class="snum">03</span><span data-fr="Douane" data-zh="清关">Customs</span></a>
+      <a href="#freight"><span class="snum">04</span><span data-fr="Transit" data-zh="货运代理">Forwarding</span></a>
+      <a href="#warehouse"><span class="snum">05</span><span data-fr="Entreposage" data-zh="仓储">Warehousing</span></a>
+      <a href="#mining"><span class="snum">06</span><span data-fr="Minier" data-zh="矿业运输">Mining</span></a>
+    </div>
+  </nav>
+
+  <!-- ============ 01 VESSEL & PORT AGENCY ============ -->
+  <section class="section" id="agency">
+    <div class="container">
+      <header class="sec-head reveal">
+        <p class="kicker"><span class="knum">01</span><span data-fr="Agence navire &amp; portuaire" data-zh="船舶与港口代理">Vessel &amp; port agency</span></p>
+        <h2 class="sec-title">
+          <span class="line" data-fr="De la pré-arrivée," data-zh="从预抵港，">From pre-arrival,</span>
+          <span class="line"><em data-fr="au départ." data-zh="到安全离港。">to departure.</em></span>
+        </h2>
+        <p class="sec-sub" data-fr="Couverture complète de la pré-arrivée au départ — licences d'agence en Guinée, Sierra Leone et Congo, droits d'accostage prioritaire et relations directes avec les autorités portuaires."
+           data-zh="覆盖预抵港至离港全流程 —— 持三国船务代理执照，享优先泊位权，与港口当局保持直接合作关系。">
+          Full coverage from pre-arrival to departure — agency licenses in Guinea, Sierra Leone and Congo, priority berthing rights and direct port-authority relationships.</p>
+      </header>
+
+      <div class="sd-grid reveal">
+        <div>
+          <p class="sd-h mono"><span data-fr="Déroulement" data-zh="服务流程">How it runs</span>
+            <span class="ph" data-fr="Contenu provisoire" data-zh="占位内容 · 待业务确认">Placeholder — to refine</span></p>
+          <ol class="step-list">
+            <li data-fr="Documentation pré-arrivée et réservation du poste à quai" data-zh="预抵港文件办理与泊位预订">Pre-arrival documentation and berth booking</li>
+            <li data-fr="Coordination de l'accostage avec l'autorité portuaire" data-zh="与港口当局协调靠泊作业">Berthing coordination with the port authority</li>
+            <li data-fr="Supervision des opérations cargo et services au navire" data-zh="货物作业监督与船舶服务保障">Cargo-operations supervision and husbandry services</li>
+            <li data-fr="Règlement des frais portuaires et formalités de départ" data-zh="港口费用结算与离港手续">Port-dues settlement and departure clearance</li>
+          </ol>
+        </div>
+        <div>
+          <p class="sd-h mono" data-fr="Périmètre" data-zh="服务范围">Scope</p>
+          <ul class="cred-list">
+            <li data-fr="Accostage prioritaire — Conakry · Freetown · Pointe-Noire" data-zh="优先泊位 —— 科纳克里 · 弗里敦 · 黑角">Priority berthing — Conakry · Freetown · Pointe-Noire</li>
+            <li data-fr="Services au navire et gestion d'équipage" data-zh="船舶服务与船员事务">Husbandry and crew matters</li>
+            <li data-fr="Coordination soutes et pièces de rechange" data-zh="燃油补给与备件协调">Bunker and spares coordination</li>
+            <li data-fr="Agence protectrice pour armateurs" data-zh="船东保护性代理">Owner's protective agency</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 PROJECT & HEAVY CARGO ============ -->
+  <section class="section" id="project">
+    <div class="container">
+      <header class="sec-head reveal">
+        <p class="kicker"><span class="knum">02</span><span data-fr="Fret de projet &amp; lourd" data-zh="项目与重型货物">Project &amp; heavy cargo</span></p>
+        <h2 class="sec-title">
+          <span class="line" data-fr="Lourd, hors gabarit —" data-zh="重型超限，">Heavy, oversized —</span>
+          <span class="line"><em data-fr="livré quand même." data-zh="照样交付。">delivered anyway.</em></span>
+        </h2>
+        <p class="sec-sub" data-fr="Spécialistes du lourd, du surdimensionné et du breakbulk : réacteurs de 110 tonnes, locomotives, équipements industriels. Études d'itinéraire, coordination gouvernementale, livraison."
+           data-zh="专精重型、超大件与散杂货：110 吨反应器、机车、工业设备。路线勘察、政府协调、使命必达。">
+          Heavy, oversized and breakbulk specialists: 110-ton reactors, locomotives, industrial plant. Route surveys, government coordination, delivery.</p>
+      </header>
+
+      <div class="sd-grid reveal">
+        <div>
+          <p class="sd-h mono"><span data-fr="Déroulement" data-zh="服务流程">How it runs</span>
+            <span class="ph" data-fr="Contenu provisoire" data-zh="占位内容 · 待业务确认">Placeholder — to refine</span></p>
+          <ol class="step-list">
+            <li data-fr="Étude de faisabilité et relevé d'itinéraire détaillé" data-zh="可行性研究与详细路线勘察">Feasibility study and detailed route survey</li>
+            <li data-fr="Coordination gouvernementale, permis et escortes" data-zh="政府协调、许可办理与护送安排">Government coordination, permits and escorts</li>
+            <li data-fr="Levage spécialisé, arrimage et saisissage" data-zh="专业吊装、绑扎与加固">Specialised lifting, lashing and securing</li>
+            <li data-fr="Transport intérieur et positionnement final" data-zh="内陆运输与最终就位">Inland transport and final positioning</li>
+          </ol>
+        </div>
+        <div>
+          <p class="sd-h mono" data-fr="Capacités prouvées" data-zh="已验证能力">Proven capability</p>
+          <ul class="cred-list">
+            <li data-fr="Corps de réacteur de 110 t transporté sur 900 km" data-zh="110 吨反应器主体运输 900 公里">110 t reactor body moved 900 km</li>
+            <li data-fr="Locomotives et matériel roulant" data-zh="机车及轨道车辆">Locomotives and rolling stock</li>
+            <li data-fr="20+ remorques surbaissées multi-essieux en propre" data-zh="自有 20 余辆多轴低底盘拖车">20+ owned multi-axle low-bed trailers</li>
+            <li data-fr="Mobilisation de grues et équipements de levage" data-zh="吊机与起重设备调配">Crane and lifting-equipment mobilisation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 CUSTOMS CLEARANCE ============ -->
+  <section class="section" id="customs">
+    <div class="container">
+      <header class="sec-head reveal">
+        <p class="kicker"><span class="knum">03</span><span data-fr="Dédouanement" data-zh="清关服务">Customs clearance</span></p>
+        <h2 class="sec-title">
+          <span class="line" data-fr="Équipes internes," data-zh="自营团队，">In-house teams,</span>
+          <span class="line"><em data-fr="règles locales maîtrisées." data-zh="深谙当地规则。">local rulebooks.</em></span>
+        </h2>
+        <p class="sec-sub" data-fr="Équipes internes dans chaque pays d'opération — maîtrise des réglementations fiscales locales, des procédures en franchise de droits et de la conformité du secteur minier."
+           data-zh="各运营国均设自营清关团队 —— 深谙当地税收法规、免税项目流程与矿业合规要求。">
+          In-house teams in every country we operate — deep knowledge of local tax regulation, duty-free procedures and mining-sector compliance.</p>
+      </header>
+
+      <div class="sd-grid reveal">
+        <div>
+          <p class="sd-h mono"><span data-fr="Déroulement" data-zh="服务流程">How it runs</span>
+            <span class="ph" data-fr="Contenu provisoire" data-zh="占位内容 · 待业务确认">Placeholder — to refine</span></p>
+          <ol class="step-list">
+            <li data-fr="Classification tarifaire et pré-vérification documentaire" data-zh="税则归类与单证预审">Tariff classification and document pre-check</li>
+            <li data-fr="Déclaration et évaluation des droits et taxes" data-zh="申报与税费核定">Declaration and duty assessment</li>
+            <li data-fr="Assistance aux inspections physiques" data-zh="查验陪同与现场处理">Inspection attendance</li>
+            <li data-fr="Mainlevée et remise à la livraison" data-zh="放行与交付衔接">Release and delivery handover</li>
+          </ol>
+        </div>
+        <div>
+          <p class="sd-h mono" data-fr="Expertise" data-zh="专业领域">Expertise</p>
+          <ul class="cred-list">
+            <li data-fr="Conformité du secteur minier" data-zh="矿业行业合规">Mining-sector compliance</li>
+            <li data-fr="Procédures de franchise pour projets" data-zh="项目免税流程办理">Duty-free project procedures</li>
+            <li data-fr="Régimes d'admission temporaire" data-zh="暂准进口制度运用">Temporary-admission regimes</li>
+            <li data-fr="Conseil fiscal à l'importation" data-zh="进口税务咨询">Import tax advisory</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 FREIGHT FORWARDING ============ -->
+  <section class="section" id="freight">
+    <div class="container">
+      <header class="sec-head reveal">
+        <p class="kicker"><span class="knum">04</span><span data-fr="Transit de fret" data-zh="货运代理">Freight forwarding</span></p>
+        <h2 class="sec-title">
+          <span class="line" data-fr="Mer, air, route —" data-zh="海、空、陆三式，">Ocean, air and road —</span>
+          <span class="line"><em data-fr="un seul contrat." data-zh="一份合同全包。">one contract.</em></span>
+        </h2>
+        <p class="sec-sub" data-fr="Fret maritime, aérien et routier, intégré au dédouanement — avec un support multilingue en français, anglais et chinois."
+           data-zh="海运、空运、陆运与清关一体化 —— 提供法、英、中三语全程服务支持。">
+          Ocean, air and road freight, fully integrated with clearance — supported in English, French and Chinese.</p>
+      </header>
+
+      <div class="sd-grid reveal">
+        <div>
+          <p class="sd-h mono"><span data-fr="Déroulement" data-zh="服务流程">How it runs</span>
+            <span class="ph" data-fr="Contenu provisoire" data-zh="占位内容 · 待业务确认">Placeholder — to refine</span></p>
+          <ol class="step-list">
+            <li data-fr="Choix d'itinéraire et cotation consolidée" data-zh="路线规划与整合报价">Routing and consolidated quotation</li>
+            <li data-fr="Réservation et gestion documentaire" data-zh="订舱与单证办理">Booking and documentation</li>
+            <li data-fr="Transport multimodal et suivi" data-zh="多式联运与全程跟踪">Multimodal movement and tracking</li>
+            <li data-fr="Dédouanement et livraison du dernier kilomètre" data-zh="清关与最后一公里交付">Clearance and last-mile delivery</li>
+          </ol>
+        </div>
+        <div>
+          <p class="sd-h mono" data-fr="Couverture" data-zh="服务覆盖">Coverage</p>
+          <ul class="cred-list">
+            <li data-fr="Maritime Chine–Afrique de l'Ouest, FCL &amp; LCL" data-zh="中国—西非海运整柜与拼箱">China–West Africa ocean, FCL &amp; LCL</li>
+            <li data-fr="Fret aérien via les hubs régionaux" data-zh="经区域枢纽的空运服务">Airfreight via regional hubs</li>
+            <li data-fr="Camionnage transfrontalier" data-zh="跨境陆运">Cross-border trucking</li>
+            <li data-fr="Support intégral EN · FR · 中文" data-zh="英 · 法 · 中三语全程支持">Full EN · FR · 中文 support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 WAREHOUSING & YARD ============ -->
+  <section class="section" id="warehouse">
+    <div class="container">
+      <header class="sec-head reveal">
+        <p class="kicker"><span class="knum">05</span><span data-fr="Entreposage &amp; parc" data-zh="仓储与堆场">Warehousing &amp; yard</span></p>
+        <h2 class="sec-title">
+          <span class="line" data-fr="50 000 m²" data-zh="五万平方米，">50,000 m² of</span>
+          <span class="line"><em data-fr="d'espace sécurisé." data-zh="全程安保把守。">secured ground.</em></span>
+        </h2>
+        <p class="sec-sub" data-fr="Plus de 50 000 m² d'entrepôts sous douane et de parcs sécurisés en Guinée, Sierra Leone et Congo — tous types de cargaisons, inventaire en temps réel."
+           data-zh="在几内亚、塞拉利昂、刚果拥有超 5 万 m² 保税仓库与安保堆场 —— 支持各类货物与实时库存管理。">
+          50,000+ m² of bonded warehouse and secured yard across Guinea, Sierra Leone and Congo — all cargo types, real-time inventory.</p>
+      </header>
+
+      <div class="sd-grid reveal">
+        <div>
+          <p class="sd-h mono"><span data-fr="Déroulement" data-zh="服务流程">How it runs</span>
+            <span class="ph" data-fr="Contenu provisoire" data-zh="占位内容 · 待业务确认">Placeholder — to refine</span></p>
+          <ol class="step-list">
+            <li data-fr="Réception et pointage des marchandises" data-zh="货物接收与理货">Receiving and tally</li>
+            <li data-fr="Stockage sous douane et gestion d'inventaire" data-zh="保税存储与库存管理">Bonded storage and inventory management</li>
+            <li data-fr="Manutention à valeur ajoutée — tri, kitting, étiquetage" data-zh="增值作业 —— 分拣、组配、贴标">Value-added handling — sorting, kitting, labelling</li>
+            <li data-fr="Expédition et distribution" data-zh="出库调度与配送">Dispatch and distribution</li>
+          </ol>
+        </div>
+        <div>
+          <p class="sd-h mono" data-fr="Installations" data-zh="设施条件">Facilities</p>
+          <ul class="cred-list">
+            <li data-fr="Entrepôts sous douane — Guinée · Sierra Leone · Congo" data-zh="保税仓库 —— 几内亚 · 塞拉利昂 · 刚果">Bonded warehouses — Guinea · Sierra Leone · Congo</li>
+            <li data-fr="Sécurité 24 h/24 et vidéosurveillance" data-zh="7×24 小时安保与视频监控">24/7 security and CCTV</li>
+            <li data-fr="Inventaire en temps réel" data-zh="实时库存系统">Real-time inventory</li>
+            <li data-fr="Parc ouvert pour cargaisons de projet" data-zh="项目货物露天堆场">Open yard for project cargo</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 MINING & ORE TRANSPORT ============ -->
+  <section class="section" id="mining">
+    <div class="container">
+      <header class="sec-head reveal">
+        <p class="kicker"><span class="knum">06</span><span data-fr="Transport minier" data-zh="矿业运输">Mining &amp; ore transport</span></p>
+        <h2 class="sec-title">
+          <span class="line" data-fr="Trois millions de tonnes," data-zh="三百万吨，">Three million tons,</span>
+          <span class="line"><em data-fr="chaque année." data-zh="年复一年。">every year.</em></span>
+        </h2>
+        <p class="sec-sub" data-fr="Transporteur général de SPIC Guinea Aluminum et Nordgold — plus de 3 millions de tonnes de minerai par an avec une flotte minière dédiée."
+           data-zh="几内亚铝业（SPIC）与 Nordgold 的总运输承包商 —— 年矿石运量超 300 万吨，配备专用矿山车队。">
+          General transport contractor to SPIC Guinea Aluminum and Nordgold — 3M+ tons of ore per year with a dedicated mining fleet.</p>
+      </header>
+
+      <div class="sd-grid reveal">
+        <div>
+          <p class="sd-h mono"><span data-fr="Déroulement" data-zh="服务流程">How it runs</span>
+            <span class="ph" data-fr="Contenu provisoire" data-zh="占位内容 · 待业务确认">Placeholder — to refine</span></p>
+          <ol class="step-list">
+            <li data-fr="Planification du transport mine–port" data-zh="矿区—港口运输规划">Pit-to-port haulage planning</li>
+            <li data-fr="Affectation d'une flotte dédiée" data-zh="专属车队配置">Dedicated fleet allocation</li>
+            <li data-fr="Chargement, pesage et pointage" data-zh="装载、过磅与计数">Loading, weighing and tally</li>
+            <li data-fr="Stockage portuaire et mise à bord" data-zh="港口堆存与装船衔接">Port stockpiling and shiploading handover</li>
+          </ol>
+        </div>
+        <div>
+          <p class="sd-h mono" data-fr="Dispositif" data-zh="保障体系">Setup</p>
+          <ul class="cred-list">
+            <li data-fr="Contrats SPIC Guinea Aluminum &amp; Nordgold" data-zh="SPIC 几内亚铝业与 Nordgold 合约">SPIC Guinea Aluminum &amp; Nordgold contracts</li>
+            <li data-fr="Flotte de camions miniers dédiée" data-zh="专用矿山卡车车队">Dedicated mining-truck fleet</li>
+            <li data-fr="Équipes d'entretien des pistes" data-zh="道路养护班组">Haul-road maintenance crews</li>
+            <li data-fr="Réseau carburant et ateliers mobiles" data-zh="燃油补给与移动维修网络">Fuel network and mobile workshops</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="section band cta-band">
+    <div class="container cta-inner">
+      <p class="kicker"><span data-fr="Contact" data-zh="联系我们">Contact</span></p>
+      <h2 class="cta-title">
+        <span data-fr="Déplaçons des cargaisons," data-zh="携手合作，">Let's move cargo,</span>
+        <em data-fr="ensemble." data-zh="推动货物流转。">together.</em>
+      </h2>
+      <p class="cta-sub" data-fr="Décrivez votre cargaison — l'équipe répond dans les 2 heures avec une approche concrète." data-zh="告诉我们您的货物情况 —— 团队将在 2 小时内给出可执行方案。">Describe your cargo — the team replies within two hours with a workable approach.</p>
+      <div class="cta-actions">
+        <a class="btn btn-solid" href="contact.html#quote"><span data-fr="Demander un devis" data-zh="获取报价">Get a quote</span><span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="mailto:logistics@akitagn.com">logistics@akitagn.com</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-foot">
+  <div class="container">
+    <div class="foot-top">
+      <p class="foot-mark">AKITA<span>秋田集团</span></p>
+      <p class="foot-blurb"
+         data-fr="Agence portuaire, transit, fret de projet et gestion de la chaîne d'approvisionnement en Afrique de l'Ouest et Centrale. Fondé en 2019."
+         data-zh="港口代理、货运代理、项目货物与供应链管理，覆盖西非与中非。2019 年创立。">
+        Port agency, freight forwarding, project cargo and supply-chain management across West &amp; Central Africa. Founded 2019.</p>
+    </div>
+
+    <div class="foot-grid">
+      <nav class="foot-col" aria-label="Services">
+        <p class="foot-h mono" data-fr="Services" data-zh="服务">Services</p>
+        <a href="services.html#agency" data-fr="Agence navire &amp; portuaire" data-zh="船舶与港口代理">Vessel &amp; port agency</a>
+        <a href="services.html#project" data-fr="Fret de projet &amp; lourd" data-zh="项目与重型货物">Project &amp; heavy cargo</a>
+        <a href="services.html#customs" data-fr="Dédouanement" data-zh="清关服务">Customs clearance</a>
+        <a href="services.html#freight" data-fr="Transit de fret" data-zh="货运代理">Freight forwarding</a>
+        <a href="services.html#warehouse" data-fr="Entreposage &amp; parc" data-zh="仓储与堆场">Warehousing &amp; yard</a>
+        <a href="services.html#mining" data-fr="Transport minier" data-zh="矿业运输">Mining &amp; ore transport</a>
+      </nav>
+      <div class="foot-col">
+        <p class="foot-h mono" data-fr="Régions" data-zh="覆盖地区">Regions</p>
+        <p data-fr="Guinée" data-zh="几内亚">Guinea</p>
+        <p data-fr="Sierra Leone" data-zh="塞拉利昂">Sierra Leone</p>
+        <p data-fr="Congo (Brazzaville)" data-zh="刚果（布）">Congo (Brazzaville)</p>
+        <p data-fr="Ghana" data-zh="加纳">Ghana</p>
+        <p data-fr="Nigeria" data-zh="尼日利亚">Nigeria</p>
+        <p data-fr="Sénégal" data-zh="塞内加尔">Senegal</p>
+      </div>
+      <nav class="foot-col" aria-label="Company">
+        <p class="foot-h mono" data-fr="Entreprise" data-zh="公司">Company</p>
+        <a href="about.html" data-fr="À propos" data-zh="关于我们">About us</a>
+        <a href="operations.html" data-fr="Opérations" data-zh="运营现场">Operations</a>
+        <a href="cases.html" data-fr="Études de cas" data-zh="案例研究">Case studies</a>
+        <a href="contact.html" data-fr="Contact" data-zh="联系我们">Contact</a>
+      </nav>
+      <div class="foot-col">
+        <p class="foot-h mono" data-fr="Contact" data-zh="联系方式">Contact</p>
+        <a href="mailto:logistics@akitagn.com">logistics@akitagn.com</a>
+        <p data-fr="Réponse sous 2 heures" data-zh="2 小时内响应">Replies within 2 hours</p>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <p class="mono">© <span id="year">2026</span> 秋田集团 Akita Group · HK Akita Pacific Limited.
+        <span data-fr="Tous droits réservés." data-zh="版权所有。">All rights reserved.</span></p>
+      <a class="mono to-top" href="#top" data-fr="Haut de page ↑" data-zh="返回顶部 ↑">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
