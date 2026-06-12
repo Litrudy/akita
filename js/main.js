@@ -59,6 +59,9 @@
     document.querySelectorAll('.lang-switch button').forEach(function (btn) {
       btn.classList.toggle('is-active', btn.dataset.lang === lang);
     });
+
+    /* let dynamically rendered modules (e.g. news) follow the switch */
+    document.dispatchEvent(new CustomEvent('akita:langchange', { detail: { lang: lang } }));
   }
 
   document.querySelectorAll('.lang-switch button').forEach(function (btn) {

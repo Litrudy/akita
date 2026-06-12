@@ -25,3 +25,39 @@ CREATE TABLE IF NOT EXISTS enquiries (
   INDEX idx_created (created_at),
   INDEX idx_kind (kind)
 ) ENGINE = InnoDB;
+
+-- phase 2: trilingual news + admin accounts ---------------------------------
+
+CREATE TABLE IF NOT EXISTS news (
+  id           INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  slug         VARCHAR(120)  NOT NULL UNIQUE,
+  position     INT           NOT NULL DEFAULT 0,
+  status       ENUM('draft', 'published') NOT NULL DEFAULT 'draft',
+  meta_label   VARCHAR(160)  NOT NULL DEFAULT '',
+  category_en  VARCHAR(120)  NOT NULL DEFAULT '',
+  category_fr  VARCHAR(120)  NOT NULL DEFAULT '',
+  category_zh  VARCHAR(120)  NOT NULL DEFAULT '',
+  title_en     VARCHAR(255)  NOT NULL DEFAULT '',
+  title_fr     VARCHAR(255)  NOT NULL DEFAULT '',
+  title_zh     VARCHAR(255)  NOT NULL DEFAULT '',
+  subtitle_en  VARCHAR(255)  NOT NULL DEFAULT '',
+  subtitle_fr  VARCHAR(255)  NOT NULL DEFAULT '',
+  subtitle_zh  VARCHAR(255)  NOT NULL DEFAULT '',
+  body_en      MEDIUMTEXT    NULL,
+  body_fr      MEDIUMTEXT    NULL,
+  body_zh      MEDIUMTEXT    NULL,
+  -- facts: one per line, six " | "-separated segments:
+  -- value_en | value_fr | value_zh | label_en | label_fr | label_zh
+  facts        TEXT          NULL,
+  published_at DATETIME      NULL,
+  created_at   TIMESTAMP     NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at   TIMESTAMP     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  INDEX idx_status_pos (status, position, id)
+) ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS admins (
+  id            INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  username      VARCHAR(60)  NOT NULL UNIQUE,
+  password_hash VARCHAR(255) NOT NULL,
+  created_at    TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE = InnoDB;

@@ -2,6 +2,7 @@
 
 require('dotenv').config();
 
+const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit');
@@ -13,25 +14,31 @@ const PORT = Number(process.env.PORT || 3000);
 
 if (process.env.TRUST_PROXY === '1') app.set('trust proxy', 1);
 app.disable('x-powered-by');
-app.use(express.json({ limit: '64kb' }));
+app.use(express.json({ limit: '256kb' }));
 
 /* CORS: explicit allow-list in production (ALLOWED_ORIGINS), permissive in dev */
 const allowed = (process.env.ALLOWED_ORIGINS || '')
   .split(',').map(s => s.trim()).filter(Boolean);
 app.use(cors({
   origin: allowed.length ? allowed : true,
-  methods: ['GET', 'POST'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
   maxAge: 86400
 }));
 
-/* rate limit the API: 10 submissions / 10 minutes / IP */
-app.use('/api/', rateLimit({
+/* admin panel (static) + admin API + public news API */
+app.use('/admin', express.static(path.join(__dirname, 'admin')));
+app.use('/api/admin', require('./admin-api'));
+app.use('/api/news', require('./news-api'));
+
+/* rate limit public submissions: 10 / 10 minutes / IP */
+const enquiryLimiter = rateLimit({
   windowMs: 10 * 60 * 1000,
   limit: 10,
   standardHeaders: 'draft-7',
   legacyHeaders: false,
   message: { ok: false, error: 'too_many_requests' }
-}));
+});
 
 const str = (v, max) => (typeof v === 'string' ? v.trim().slice(0, max) : '');
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -42,7 +49,7 @@ app.get('/api/health', async (_req, res) => {
   res.json({ ok: true, db });
 });
 
-app.post('/api/enquiry', async (req, res) => {
+app.post('/api/enquiry', enquiryLimiter, async (req, res) => {
   const b = req.body || {};
 
   /* honeypot: bots fill the invisible "website" field — pretend success */

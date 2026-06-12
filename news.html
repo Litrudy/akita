@@ -171,11 +171,17 @@
 
   <!-- ============ SUBNAV ============ -->
   <nav class="subnav" aria-label="News sections">
-    <div class="container subnav-in">
+    <div class="container subnav-in" id="newsSubnav">
       <a href="#djibouti"><span class="snum">01</span><span data-fr="Coopération Djibouti" data-zh="吉布提港口合作">Djibouti cooperation</span></a>
       <a href="#wbx"><span class="snum">02</span><span data-fr="WBX 2026 Shanghai" data-zh="WBX 2026 上海">WBX 2026 Shanghai</span></a>
     </div>
   </nav>
+
+  <!-- dynamic articles render here when the backend is available -->
+  <div id="newsApp"></div>
+
+  <!-- static fallback (kept for GitHub Pages / no-backend mode) -->
+  <div id="newsStatic">
 
   <!-- ============ 01 DJIBOUTI ============ -->
   <section class="section" id="djibouti">
@@ -241,6 +247,8 @@
       </article>
     </div>
   </section>
+
+  </div><!-- /#newsStatic -->
 
   <!-- ============ CTA ============ -->
   <section class="section band cta-band">
@@ -316,5 +324,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/news.js"></script>
 </body>
 </html>
