@@ -26,7 +26,7 @@ async function main() {
       [process.env.DB_NAME || 'akita']
     );
     console.log(rows[0].n === 1
-      ? 'OK — database "akita" ready, table "enquiries" exists.'
+      ? `OK — database "${process.env.DB_NAME || 'akita_site'}" ready, table "enquiries" exists.`
       : 'Schema executed, but table check failed — inspect manually.');
   } catch (err) {
     if (err.code === 'ER_DBACCESS_DENIED_ERROR' || err.code === 'ER_ACCESS_DENIED_ERROR') {

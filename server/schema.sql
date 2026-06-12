@@ -1,9 +1,9 @@
 -- Akita website database — phase 1
-CREATE DATABASE IF NOT EXISTS akita
+CREATE DATABASE IF NOT EXISTS akita_site
   CHARACTER SET utf8mb4
   COLLATE utf8mb4_unicode_ci;
 
-USE akita;
+USE akita_site;
 
 CREATE TABLE IF NOT EXISTS enquiries (
   id          INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
