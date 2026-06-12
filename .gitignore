@@ -8,3 +8,6 @@ images/us/Logo/
 # OS noise
 Thumbs.db
 .DS_Store
+
+# content source materials - keep local only
+AKITA_Build/

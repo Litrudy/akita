@@ -12,8 +12,8 @@
   --font-body: "Inter", "Noto Sans SC", system-ui, -apple-system, sans-serif;
   --font-mono: "IBM Plex Mono", "Noto Sans SC", ui-monospace, monospace;
 
-  --bg: #f7f8fc;
-  --bg-elev: #ffffff;
+  --bg: #ffffff;
+  --bg-elev: #f4f5f8;
   --ink: #1a1f2b;
   --ink-2: #5c6675;
   --ink-3: #8b94a8;
@@ -58,7 +58,7 @@
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 
   /* band flips to paper in dark mode */
-  --band-bg: #f7f8fc;
+  --band-bg: #ffffff;
   --band-ink: #1a1f2b;
   --band-ink-2: #5c6675;
   --band-line: #e4e8f0;
