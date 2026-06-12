@@ -38,11 +38,14 @@
 
     <nav class="main-nav" id="mainNav" aria-label="Primary">
       <div class="nav-item">
+        <a href="index.html" data-fr="Accueil" data-zh="首页">Home</a>
+      </div>
+      <div class="nav-item">
         <a href="about.html" data-fr="À propos" data-zh="关于我们">About</a>
         <div class="nav-sub">
           <a href="about.html#profile" data-fr="Profil du groupe" data-zh="集团简介">Company profile</a>
           <a href="about.html#milestones" data-fr="Jalons" data-zh="发展历程">Milestones</a>
-          <a href="about.html#team" data-fr="Direction" data-zh="管理团队">Leadership</a>
+          <a href="about.html#team" data-fr="Équipes locales" data-zh="本地团队">Local teams</a>
           <a href="about.html#partners" data-fr="Partenaires" data-zh="合作伙伴">Partners</a>
           <a href="about.html#foundation" data-fr="Mission &amp; vision" data-zh="使命愿景">Mission &amp; vision</a>
         </div>
@@ -73,7 +76,14 @@
         <div class="nav-sub">
           <a href="cases.html#projects" data-fr="Projets livrés" data-zh="项目案例">Delivered projects</a>
           <a href="cases.html#contracts" data-fr="Contrats long terme" data-zh="长期合约">Long-term contracts</a>
-          <a href="cases.html#testimonials" data-fr="Témoignages" data-zh="客户评价">Testimonials</a>
+          <a href="cases.html#why" data-fr="Pourquoi Akita" data-zh="为什么选择我们">Why Akita</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="news.html" data-fr="Actualités" data-zh="新闻动态">News</a>
+        <div class="nav-sub">
+          <a href="news.html#djibouti" data-fr="Coopération portuaire — Djibouti" data-zh="吉布提港口合作">Djibouti port cooperation</a>
+          <a href="news.html#wbx" data-fr="WBX 2026 — Shanghai" data-zh="WBX 2026 上海展会">WBX 2026 Shanghai</a>
         </div>
       </div>
       <div class="nav-item">
@@ -187,8 +197,8 @@
             <a class="ci-value" href="mailto:logistics@akitagn.com">logistics@akitagn.com</a>
           </div>
           <div class="ci-row">
-            <p class="ci-label mono" data-fr="WhatsApp / WeChat" data-zh="WhatsApp / 微信">WhatsApp / WeChat</p>
-            <p class="ci-value"><span data-fr="À publier" data-zh="号码待公布">To be published</span> <span class="ph" data-fr="Numéros en attente" data-zh="占位 · 待提供">Placeholder</span></p>
+            <p class="ci-label mono" data-fr="Bureaux de pays" data-zh="国家邮箱直达">Country desks</p>
+            <p class="ci-value" data-fr="Congo · Sierra Leone · Guinée · Nigeria — e-mails directs ci-dessous" data-zh="刚果（布）· 塞拉利昂 · 几内亚 · 尼日利亚 —— 直达邮箱见下方办事处">Congo · Sierra Leone · Guinea · Nigeria — direct emails below</p>
           </div>
           <div class="ci-row">
             <p class="ci-label mono" data-fr="Délai de réponse" data-zh="响应时间">Response time</p>
@@ -257,17 +267,14 @@
   <section class="section" id="tracking">
     <div class="container">
       <header class="sec-head reveal">
-        <p class="kicker">
-          <span class="knum">02</span><span data-fr="Suivi de cargaison" data-zh="货物追踪">Cargo tracking</span>
-          <span class="ph" data-fr="Portail en ligne en cours d'intégration" data-zh="在线追踪系统对接中 · 暂经邮件查询">Online portal being integrated</span>
-        </p>
+        <p class="kicker"><span class="knum">02</span><span data-fr="Suivi de cargaison" data-zh="货物追踪">Cargo tracking</span></p>
         <h2 class="sec-title">
           <span class="line" data-fr="Où en est" data-zh="我的货，">Where is</span>
           <span class="line"><em data-fr="ma cargaison ?" data-zh="到哪了？">my cargo?</em></span>
         </h2>
-        <p class="sec-sub" data-fr="En attendant le portail en libre-service, saisissez votre référence — la demande part directement à l'équipe opérations, qui répond dans les 2 heures."
-           data-zh="自助查询门户上线前，输入您的单号 —— 查询请求将直达运营团队，2 小时内回复最新状态。">
-          Until the self-service portal goes live, enter your reference — the request goes straight to the operations team, who reply within two hours.</p>
+        <p class="sec-sub" data-fr="Saisissez votre numéro de B/L, de conteneur ou de dossier — la demande part directement à l'équipe opérations, qui répond avec le dernier statut sous 2 heures."
+           data-zh="输入提单号、集装箱号或委托单号 —— 查询请求将直达运营团队，2 小时内回复最新状态。">
+          Enter your B/L, container or file number — the request goes straight to the operations team, who reply with the latest status within two hours.</p>
       </header>
 
       <form class="track-box reveal" data-track style="max-width: 640px; margin-top: clamp(30px, 4vw, 48px);">
@@ -281,90 +288,76 @@
   <section class="section" id="offices">
     <div class="container">
       <header class="sec-head reveal">
-        <p class="kicker">
-          <span class="knum">03</span><span data-fr="Nos bureaux" data-zh="办事处">Offices</span>
-          <span class="ph" data-fr="Adresses &amp; téléphones à compléter" data-zh="地址与电话为占位 · 待补充">Addresses &amp; phones to be completed</span>
-        </p>
+        <p class="kicker"><span class="knum">03</span><span data-fr="Nos bureaux" data-zh="办事处">Offices</span></p>
         <h2 class="sec-title">
-          <span class="line" data-fr="Des gens sur place," data-zh="七地驻点，">People on the ground,</span>
-          <span class="line"><em data-fr="dans sept villes." data-zh="真人坐镇。">in seven cities.</em></span>
+          <span class="line" data-fr="Des équipes sur place," data-zh="七地驻点，">People on the ground,</span>
+          <span class="line"><em data-fr="dans sept implantations." data-zh="真人坐镇。">across seven offices.</em></span>
         </h2>
       </header>
 
       <div class="office-grid reveal">
         <article class="office-card">
-          <p class="office-cc mono">GN · HQ</p>
-          <h3 class="office-city">Conakry</h3>
-          <p class="office-country" data-fr="Guinée — siège opérationnel" data-zh="几内亚 —— 运营总部">Guinea — operating headquarters</p>
+          <p class="office-cc mono">HQ · GROUP</p>
+          <h3 class="office-city">AKITA GROUP</h3>
+          <p class="office-country" data-fr="Siège / Groupe" data-zh="集团总部">Head Office / Group</p>
           <div class="office-rows">
-            <p><span class="k" data-fr="Adresse" data-zh="地址">Addr</span><span data-fr="À confirmer" data-zh="待补充">To be confirmed</span></p>
-            <p><span class="k" data-fr="Tél." data-zh="电话">Tel</span><span>+224 · <span data-fr="à confirmer" data-zh="待补充">TBC</span></span></p>
             <p><span class="k">Email</span><a href="mailto:logistics@akitagn.com">logistics@akitagn.com</a></p>
+            <p><span class="k" data-fr="Langues" data-zh="语言">Lang</span><span>EN · FR · 中文</span></p>
           </div>
         </article>
 
         <article class="office-card">
-          <p class="office-cc mono">SL</p>
-          <h3 class="office-city">Freetown</h3>
-          <p class="office-country" data-fr="Sierra Leone — bureau de pays" data-zh="塞拉利昂 —— 国家办事处">Sierra Leone — country office</p>
-          <div class="office-rows">
-            <p><span class="k" data-fr="Adresse" data-zh="地址">Addr</span><span data-fr="À confirmer" data-zh="待补充">To be confirmed</span></p>
-            <p><span class="k" data-fr="Tél." data-zh="电话">Tel</span><span>+232 · <span data-fr="à confirmer" data-zh="待补充">TBC</span></span></p>
-            <p><span class="k">Email</span><a href="mailto:logistics@akitagn.com">logistics@akitagn.com</a></p>
-          </div>
-        </article>
-
-        <article class="office-card">
-          <p class="office-cc mono">CG</p>
+          <p class="office-cc mono">CG · PNR</p>
           <h3 class="office-city">Pointe-Noire</h3>
-          <p class="office-country" data-fr="Congo (Brazzaville) — bureau de pays" data-zh="刚果（布）—— 国家办事处">Congo (Brazzaville) — country office</p>
+          <p class="office-country" data-fr="République du Congo · Pointe-Noire" data-zh="刚果（布）· 黑角">Republic of the Congo · Pointe-Noire</p>
           <div class="office-rows">
-            <p><span class="k" data-fr="Adresse" data-zh="地址">Addr</span><span data-fr="À confirmer" data-zh="待补充">To be confirmed</span></p>
-            <p><span class="k" data-fr="Tél." data-zh="电话">Tel</span><span>+242 · <span data-fr="à confirmer" data-zh="待补充">TBC</span></span></p>
-            <p><span class="k">Email</span><a href="mailto:logistics@akitagn.com">logistics@akitagn.com</a></p>
+            <p><span class="k">Email</span><a href="mailto:pointnoire.shipping@akitagn.com">pointnoire.shipping@akitagn.com</a></p>
           </div>
         </article>
 
         <article class="office-card">
-          <p class="office-cc mono">GH</p>
-          <h3 class="office-city">Tema</h3>
-          <p class="office-country" data-fr="Ghana — bureau de pays" data-zh="加纳 —— 国家办事处">Ghana — country office</p>
+          <p class="office-cc mono">SL · FNA</p>
+          <h3 class="office-city">Freetown</h3>
+          <p class="office-country" data-fr="Sierra Leone · Freetown" data-zh="塞拉利昂 · 弗里敦">Sierra Leone · Freetown</p>
           <div class="office-rows">
-            <p><span class="k" data-fr="Adresse" data-zh="地址">Addr</span><span data-fr="À confirmer" data-zh="待补充">To be confirmed</span></p>
-            <p><span class="k" data-fr="Tél." data-zh="电话">Tel</span><span>+233 · <span data-fr="à confirmer" data-zh="待补充">TBC</span></span></p>
-            <p><span class="k">Email</span><a href="mailto:logistics@akitagn.com">logistics@akitagn.com</a></p>
+            <p><span class="k">Email</span><a href="mailto:freetown.shipping@akitagn.com">freetown.shipping@akitagn.com</a></p>
+          </div>
+        </article>
+
+        <article class="office-card">
+          <p class="office-cc mono">GN</p>
+          <h3 class="office-city" data-fr="Guinée" data-zh="几内亚">Guinea</h3>
+          <p class="office-country" data-fr="Bureau de pays" data-zh="国家办事处">Country office</p>
+          <div class="office-rows">
+            <p><span class="k">Email</span><a href="mailto:logistics.guinea-pm@akitagn.com">logistics.guinea-pm@akitagn.com</a></p>
           </div>
         </article>
 
         <article class="office-card">
           <p class="office-cc mono">NG</p>
-          <h3 class="office-city">Lagos</h3>
-          <p class="office-country" data-fr="Nigeria — bureau de pays" data-zh="尼日利亚 —— 国家办事处">Nigeria — country office</p>
+          <h3 class="office-city" data-fr="Nigeria" data-zh="尼日利亚">Nigeria</h3>
+          <p class="office-country" data-fr="Bureau de pays" data-zh="国家办事处">Country office</p>
           <div class="office-rows">
-            <p><span class="k" data-fr="Adresse" data-zh="地址">Addr</span><span data-fr="À confirmer" data-zh="待补充">To be confirmed</span></p>
-            <p><span class="k" data-fr="Tél." data-zh="电话">Tel</span><span>+234 · <span data-fr="à confirmer" data-zh="待补充">TBC</span></span></p>
+            <p><span class="k">Email</span><a href="mailto:cs.ngr@akitagn.com">cs.ngr@akitagn.com</a></p>
+          </div>
+        </article>
+
+        <article class="office-card">
+          <p class="office-cc mono">CN · SZX</p>
+          <h3 class="office-city" data-fr="Shenzhen" data-zh="深圳">Shenzhen</h3>
+          <p class="office-country" data-fr="Centre de gestion régional — SHENZHEN AKITA PACIFIC SHIPPING CO., LTD." data-zh="区域管理中心 — 深圳秋田泛太航运有限公司">Regional management center — SHENZHEN AKITA PACIFIC SHIPPING CO., LTD.</p>
+          <div class="office-rows">
+            <p><span class="k" data-fr="Adresse" data-zh="地址">Addr</span><span data-fr="Room 2104, 21/F, Building 12, Phase 2, Manjinghua Xiyueli Huating, No. 6 Yincui Road, Longgang Street, Longgang District, Shenzhen, Guangdong, 518100, Chine" data-zh="广东省深圳市龙岗区龙岗街道南联社区银翠路 6 号满京华喜悦里华庭二期 12 座 2104（邮编 518100）">Room 2104, 21/F, Building 12, Phase 2, Manjinghua Xiyueli Huating, No. 6 Yincui Road, Longgang Street, Longgang District, Shenzhen, Guangdong, 518100, China</span></p>
             <p><span class="k">Email</span><a href="mailto:logistics@akitagn.com">logistics@akitagn.com</a></p>
           </div>
         </article>
 
         <article class="office-card">
           <p class="office-cc mono">HK</p>
-          <h3 class="office-city">Hong Kong</h3>
-          <p class="office-country" data-fr="HK Akita Pacific Limited — entité corporative" data-zh="香港秋田太平洋有限公司 —— 公司主体">HK Akita Pacific Limited — corporate entity</p>
+          <h3 class="office-city" data-fr="Hong Kong" data-zh="香港">Hong Kong</h3>
+          <p class="office-country" data-fr="HONGKONG AKITA PACIFIC LIMITED" data-zh="香港秋田太平洋有限公司">HONGKONG AKITA PACIFIC LIMITED</p>
           <div class="office-rows">
-            <p><span class="k" data-fr="Adresse" data-zh="地址">Addr</span><span data-fr="À confirmer" data-zh="待补充">To be confirmed</span></p>
-            <p><span class="k" data-fr="Tél." data-zh="电话">Tel</span><span>+852 · <span data-fr="à confirmer" data-zh="待补充">TBC</span></span></p>
-            <p><span class="k">Email</span><a href="mailto:logistics@akitagn.com">logistics@akitagn.com</a></p>
-          </div>
-        </article>
-
-        <article class="office-card">
-          <p class="office-cc mono">CN</p>
-          <h3 class="office-city" data-fr="Shenzhen" data-zh="深圳">Shenzhen</h3>
-          <p class="office-country" data-fr="Chine — bureau de coordination" data-zh="中国 —— 协调办公室">China — coordination desk</p>
-          <div class="office-rows">
-            <p><span class="k" data-fr="Adresse" data-zh="地址">Addr</span><span data-fr="À confirmer" data-zh="待补充">To be confirmed</span></p>
-            <p><span class="k" data-fr="Tél." data-zh="电话">Tel</span><span>+86 · <span data-fr="à confirmer" data-zh="待补充">TBC</span></span></p>
+            <p><span class="k" data-fr="Adresse" data-zh="地址">Addr</span><span data-fr="Flat/RM I-1, Block 2, 4/F, Golden Dragon Industrial Centre, 162–170 Tai Lin Pai Road, Kwai Chung, N.T., Hong Kong" data-zh="香港新界葵涌大连排道 162–170 号金龙工业中心 2 座 4 楼 I-1 室">Flat/RM I-1, Block 2, 4/F, Golden Dragon Industrial Centre, 162–170 Tai Lin Pai Road, Kwai Chung, N.T., Hong Kong</span></p>
             <p><span class="k">Email</span><a href="mailto:logistics@akitagn.com">logistics@akitagn.com</a></p>
           </div>
         </article>
@@ -376,10 +369,7 @@
   <section class="section" id="faq">
     <div class="container">
       <header class="sec-head reveal">
-        <p class="kicker">
-          <span class="knum">04</span><span data-fr="FAQ" data-zh="常见问题">FAQ</span>
-          <span class="ph" data-fr="Réponses provisoires — à valider par les équipes" data-zh="回答为占位内容 · 待业务团队核定">Placeholder answers — to validate</span>
-        </p>
+        <p class="kicker"><span class="knum">04</span><span data-fr="FAQ" data-zh="常见问题">FAQ</span></p>
         <h2 class="sec-title">
           <span class="line" data-fr="Les questions" data-zh="客户最常问的，">The questions</span>
           <span class="line"><em data-fr="qu'on nous pose toujours." data-zh="都在这里。">we always get.</em></span>
@@ -389,9 +379,9 @@
       <div class="faq reveal">
         <details class="faq-item">
           <summary><span data-fr="En combien de temps dédouanez-vous à Conakry ?" data-zh="在科纳克里清关需要多长时间？">How fast can you clear cargo in Conakry?</span><span class="faq-x" aria-hidden="true">+</span></summary>
-          <p class="faq-a" data-fr="Le délai dépend du type de marchandise et de la qualité du dossier documentaire. Des délais indicatifs par pays et par régime seront publiés ici."
-             data-zh="时效取决于货物类型与单证完备程度。各国家、各贸易方式的参考时效将在此页公布。">
-            Timing depends on the cargo type and how complete the documentation is. Indicative lead times per country and regime will be published here.</p>
+          <p class="faq-a" data-fr="Nos équipes douanières internes dédouanent environ 40 % plus vite que la moyenne du secteur. Le délai exact dépend du type de marchandise et du dossier documentaire — contactez-nous avec les détails de votre cargaison pour un délai indicatif."
+             data-zh="自营清关团队的清关效率较行业平均提升约 40%。具体时效取决于货物类型与单证完备程度 —— 欢迎提供货物信息，我们将给出参考时效。">
+            Our in-house customs teams clear roughly 40% faster than the industry average. Exact timing depends on the cargo type and documentation — contact us with your cargo details for an indicative lead time.</p>
         </details>
         <details class="faq-item">
           <summary><span data-fr="Acceptez-vous les marchandises dangereuses et hors gabarit ?" data-zh="是否承接危险品和超限货物？">Do you handle dangerous goods and oversized cargo?</span><span class="faq-x" aria-hidden="true">+</span></summary>
@@ -401,9 +391,9 @@
         </details>
         <details class="faq-item">
           <summary><span data-fr="Quels documents faut-il pour importer en Guinée ?" data-zh="进口几内亚需要哪些文件？">Which documents do I need to import into Guinea?</span><span class="faq-x" aria-hidden="true">+</span></summary>
-          <p class="faq-a" data-fr="En général : connaissement, facture commerciale, liste de colisage et, selon le produit, certificats spécifiques. Une liste de contrôle détaillée par pays sera publiée ici."
-             data-zh="通常需要：提单、商业发票、装箱单，部分商品另需特定证书。各国详细清单将在此页发布。">
-            Typically: bill of lading, commercial invoice, packing list and, depending on the product, specific certificates. A detailed per-country checklist will be published here.</p>
+          <p class="faq-a" data-fr="En général : connaissement, facture commerciale, liste de colisage et, selon le produit, certificats spécifiques. Écrivez-nous pour recevoir la liste de contrôle détaillée du pays concerné."
+             data-zh="通常需要：提单、商业发票、装箱单，部分商品另需特定证书。欢迎来信索取对应国家的详细单证清单。">
+            Typically: bill of lading, commercial invoice, packing list and, depending on the product, specific certificates. Contact us for the detailed checklist of the country concerned.</p>
         </details>
         <details class="faq-item">
           <summary><span data-fr="Pouvez-vous coter porte-à-porte depuis la Chine ?" data-zh="能否提供中国到非洲的门到门报价？">Can you quote door-to-door from China?</span><span class="faq-x" aria-hidden="true">+</span></summary>
@@ -413,9 +403,9 @@
         </details>
         <details class="faq-item">
           <summary><span data-fr="Comment recevoir les mises à jour de statut ?" data-zh="如何获取货物状态更新？">How do I get cargo status updates?</span><span class="faq-x" aria-hidden="true">+</span></summary>
-          <p class="faq-a" data-fr="Aujourd'hui par e-mail et messagerie, avec un point de contact dédié par dossier. Un portail de suivi en libre-service est en cours d'intégration."
-             data-zh="目前通过邮件与即时通讯工具推送，每票货配备专属对接人。自助追踪门户正在对接中。">
-            Today by email and messaging, with a dedicated contact per file. A self-service tracking portal is being integrated.</p>
+          <p class="faq-a" data-fr="Par e-mail et messagerie instantanée, avec un point de contact dédié pour chaque dossier et une visibilité cargo 24 h/24, 7 j/7."
+             data-zh="通过邮件与即时通讯工具推送，每票货配备专属对接人，提供 7×24 小时货物可视化跟踪。">
+            By email and instant messaging, with a dedicated contact for every file and 24/7 cargo visibility.</p>
         </details>
       </div>
     </div>
@@ -428,9 +418,9 @@
     <div class="foot-top">
       <p class="foot-mark">AKITA<span>秋田集团</span></p>
       <p class="foot-blurb"
-         data-fr="Agence portuaire, transit, fret de projet et gestion de la chaîne d'approvisionnement en Afrique de l'Ouest et Centrale. Fondé en 2019."
-         data-zh="港口代理、货运代理、项目货物与供应链管理，覆盖西非与中非。2019 年创立。">
-        Port agency, freight forwarding, project cargo and supply-chain management across West &amp; Central Africa. Founded 2019.</p>
+         data-fr="Agence portuaire, transit, fret de projet et gestion de la chaîne d'approvisionnement à travers l'Afrique. Fondé en 2019."
+         data-zh="港口代理、货运代理、项目货物与供应链管理，服务网络覆盖非洲多国。2019 年创立。">
+        Port agency, freight forwarding, project cargo and supply-chain management across Africa. Founded 2019.</p>
     </div>
 
     <div class="foot-grid">
@@ -451,12 +441,16 @@
         <p data-fr="Ghana" data-zh="加纳">Ghana</p>
         <p data-fr="Nigeria" data-zh="尼日利亚">Nigeria</p>
         <p data-fr="Sénégal" data-zh="塞内加尔">Senegal</p>
+        <p data-fr="Djibouti" data-zh="吉布提">Djibouti</p>
+        <p data-fr="Côte d'Ivoire" data-zh="科特迪瓦">Côte d'Ivoire</p>
+        <p data-fr="Libye" data-zh="利比亚">Libya</p>
       </div>
       <nav class="foot-col" aria-label="Company">
         <p class="foot-h mono" data-fr="Entreprise" data-zh="公司">Company</p>
         <a href="about.html" data-fr="À propos" data-zh="关于我们">About us</a>
         <a href="operations.html" data-fr="Opérations" data-zh="运营现场">Operations</a>
         <a href="cases.html" data-fr="Études de cas" data-zh="案例研究">Case studies</a>
+        <a href="news.html" data-fr="Actualités" data-zh="新闻动态">News</a>
         <a href="contact.html" data-fr="Contact" data-zh="联系我们">Contact</a>
       </nav>
       <div class="foot-col">

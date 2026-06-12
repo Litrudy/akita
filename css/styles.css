@@ -999,7 +999,7 @@ a.ci-value:hover { background-size: 100% 1px; }
 /* ==========================================================================
    MOBILE NAV
    ========================================================================== */
-@media (max-width: 980px) {
+@media (max-width: 1200px) {
   .main-nav {
     position: fixed;
     inset: var(--head-h) 0 auto 0;
@@ -1635,7 +1635,7 @@ html[lang="zh-CN"] .quote-text { font-style: normal; }
   .team-grid { grid-template-columns: 1fr 1fr; }
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1200px) {
   .nav-item { width: 100%; flex-direction: column; align-items: stretch; }
   .nav-item > a { display: block; width: 100%; }
   .nav-sub { display: none; }
@@ -1937,3 +1937,154 @@ html[lang="zh-CN"] .quote-text { font-style: normal; }
   .ba-routes path, .ba-nodes .pulse { animation: none; }
 }
 
+
+/* ==========================================================================
+   CLIENT ENDORSEMENT WALL — real logos sit on white tiles in both themes
+   ========================================================================== */
+.client-wall {
+  margin-top: clamp(36px, 5vw, 64px);
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(20px, 3.2vw, 44px);
+}
+.client-wall img { width: 100%; height: auto; }
+
+.partner-strip {
+  margin-top: clamp(14px, 2vw, 22px);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(12px, 1.6vw, 20px);
+}
+
+.partner-tile {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: grid;
+  place-items: center;
+  min-height: 96px;
+  padding: 18px 22px;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.partner-tile:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.partner-tile img { max-height: 54px; max-width: 82%; width: auto; object-fit: contain; }
+
+.client-note { margin-top: 16px; color: var(--ink-3); font-size: 0.85rem; }
+
+/* ==========================================================================
+   NEWS PAGE
+   ========================================================================== */
+.news-list { margin-top: clamp(36px, 5vw, 64px); display: grid; gap: clamp(26px, 3.4vw, 44px); }
+
+.news-item {
+  border: 1px solid var(--line);
+  background: var(--bg-elev);
+  padding: clamp(26px, 3.6vw, 52px);
+}
+
+.news-meta { color: var(--accent); font-size: 0.7rem; }
+
+.news-title {
+  margin-top: 16px;
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 2.8vw, 2.3rem);
+  font-weight: 420;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  max-width: 28ch;
+}
+html[lang="zh-CN"] .news-title { font-weight: 600; }
+
+.news-sub {
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.news-body { margin-top: 22px; max-width: 76ch; }
+.news-body p { color: var(--ink-2); font-size: 0.98rem; }
+.news-body p + p { margin-top: 14px; }
+
+.fact-grid {
+  margin-top: clamp(24px, 3vw, 36px);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.fact-grid > div { border-top: 1px solid var(--line); padding-top: 14px; }
+.fact-grid dd {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  line-height: 1.1;
+  color: var(--accent);
+}
+.fact-grid dt {
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+/* ==========================================================================
+   CASE FEATURE — full-width case with photo gallery
+   ========================================================================== */
+.case-feature {
+  margin-top: clamp(22px, 3vw, 40px);
+  border: 1px solid var(--line);
+  background: var(--bg-elev);
+  padding: clamp(26px, 3.6vw, 52px);
+}
+
+.case-gallery {
+  margin-top: clamp(22px, 3vw, 36px);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(10px, 1.4vw, 16px);
+}
+.case-gallery figure {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin: 0;
+}
+.case-gallery .tall { grid-row: span 2; aspect-ratio: auto; }
+.case-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease);
+}
+.case-gallery figure:hover img { transform: scale(1.045); }
+
+/* why-us pull quote (cases page) */
+.why-quote {
+  margin-top: clamp(30px, 4vw, 48px);
+  max-width: 72ch;
+  font-size: 1.04rem;
+  color: var(--ink-2);
+}
+
+@media (max-width: 900px) {
+  .partner-strip { grid-template-columns: 1fr 1fr; }
+  .fact-grid { grid-template-columns: 1fr 1fr; }
+  .case-gallery { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px) {
+  .case-gallery { grid-template-columns: 1fr; }
+  .case-gallery .tall { grid-row: auto; }
+}
+
+/* quick-tools note (replaces placeholder chip) */
+.qt-note {
+  color: var(--ink-3);
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
