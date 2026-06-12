@@ -10,7 +10,7 @@
   var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- theme ---------- */
-  var THEME_COLORS = { light: '#ffffff', dark: '#0f1117' };
+  var THEME_COLORS = { light: '#0b1535', dark: '#0f1117' };
 
   function applyTheme(theme) {
     doc.dataset.theme = theme;

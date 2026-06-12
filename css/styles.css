@@ -12,27 +12,28 @@
   --font-body: "Inter", "Noto Sans SC", system-ui, -apple-system, sans-serif;
   --font-mono: "IBM Plex Mono", "Noto Sans SC", ui-monospace, monospace;
 
-  --bg: #ffffff;
-  --bg-elev: #f4f5f8;
-  --ink: #1a1f2b;
-  --ink-2: #5c6675;
-  --ink-3: #8b94a8;
-  --line: #e4e8f0;
-  --line-soft: rgba(15, 23, 42, 0.05);
-  --grid-line: rgba(15, 23, 42, 0.05);
-  --accent: #0ea5b7;
-  --accent-2: #7c3aed;
-  --accent-ink: #ffffff;
-  --accent-soft: rgba(14, 165, 183, 0.08);
-  --shadow: 0 10px 30px rgba(31, 41, 55, 0.08);
+  /* "light" theme = deep navy, matching akitagroup.com (#0B1535 family) */
+  --bg: #0b1535;
+  --bg-elev: #152050;
+  --ink: #e8ebf4;
+  --ink-2: #a3acc6;
+  --ink-3: #76829f;
+  --line: #232d52;
+  --line-soft: rgba(255, 255, 255, 0.05);
+  --grid-line: rgba(255, 255, 255, 0.05);
+  --accent: #6ee7ff;
+  --accent-2: #a78bfa;
+  --accent-ink: #0b1535;
+  --accent-soft: rgba(110, 231, 255, 0.08);
+  --shadow: 0 10px 30px rgba(2, 6, 18, 0.45);
 
-  /* inverted band (foundation section) */
-  --band-bg: #0f1117;
-  --band-ink: #e6e9ef;
-  --band-ink-2: #9aa3b2;
-  --band-line: #262c38;
-  --band-accent: #6ee7ff;
-  --band-accent-2: #a78bfa;
+  /* inverted band flips to paper for contrast */
+  --band-bg: #ffffff;
+  --band-ink: #1a1f2b;
+  --band-ink-2: #5c6675;
+  --band-line: #e4e8f0;
+  --band-accent: #0ea5b7;
+  --band-accent-2: #7c3aed;
 
   --head-h: 76px;
   --container: 1320px;
@@ -1659,12 +1660,11 @@ html[lang="zh-CN"] .quote-text { font-style: normal; }
    ========================================================================== */
 
 /* ---------- brand logo (black artwork; inverted in dark theme) ---------- */
-.brand-logo { height: 44px; width: auto; flex: none; }
-:root[data-theme="dark"] .brand-logo { filter: invert(1); }
+/* both themes sit on dark surfaces now — always show the mark in white */
+.brand-logo { height: 44px; width: auto; flex: none; filter: invert(1); }
 @media (max-width: 640px) { .brand-logo { height: 36px; } }
 
-.foot-logo { height: 72px; width: auto; margin-bottom: 18px; opacity: 0.9; }
-:root[data-theme="dark"] .foot-logo { filter: invert(1); }
+.foot-logo { height: 72px; width: auto; margin-bottom: 18px; opacity: 0.9; filter: invert(1); }
 
 /* ---------- photo hero (homepage) ---------- */
 .hero-photo {
