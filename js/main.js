@@ -168,17 +168,49 @@
     if (lang !== 'en') setLang(lang);
   }
 
-  /* ---------- contact form → mailto ---------- */
+  /* ---------- enquiry form → API, with mailto fallback when no backend ---------- */
+  var API_BASE = location.protocol === 'file:' ? 'http://localhost:4000' : '';
+
+  var FORM_MSG = {
+    ok: {
+      en: 'Thank you — your enquiry has been received. We will reply within 2 hours.',
+      fr: 'Merci — votre demande a bien été reçue. Réponse sous 2 heures.',
+      zh: '已收到您的询盘，我们将在 2 小时内回复。'
+    },
+    fallback: {
+      en: 'Direct submission unavailable — opening your mail client instead.',
+      fr: 'Envoi direct indisponible — ouverture de votre client e-mail.',
+      zh: '在线提交暂不可用，已为您转用邮件客户端。'
+    },
+    invalid: {
+      en: 'Please fill in your name and a valid email address.',
+      fr: 'Veuillez indiquer votre nom et une adresse e-mail valide.',
+      zh: '请填写姓名和有效的电子邮箱。'
+    }
+  };
+
+  function formLang() { return localStorage.getItem('akita-lang') || 'en'; }
+
+  function formStatus(f, key, isError) {
+    var host = f.querySelector('.ff-actions') || f;
+    var el = f.querySelector('.ff-status');
+    if (!el) {
+      el = document.createElement('p');
+      el.className = 'ff-status';
+      el.setAttribute('role', 'status');
+      host.appendChild(el);
+    }
+    var msgs = FORM_MSG[key] || {};
+    el.textContent = msgs[formLang()] || msgs.en || '';
+    el.classList.toggle('is-error', !!isError);
+  }
+
   var form = document.getElementById('contactForm');
   if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var get = function (n) { return (form.elements[n] && form.elements[n].value || '').trim(); };
-      var service = form.elements.service;
-      var serviceLabel = service && service.options[service.selectedIndex]
-        ? service.options[service.selectedIndex].textContent.trim() : '';
+    var get = function (n) { return (form.elements[n] && form.elements[n].value || '').trim(); };
 
-      var subject = 'Enquiry — ' + (serviceLabel && service.selectedIndex > 0 ? serviceLabel : 'Logistics services');
+    var openMailto = function (serviceLabel) {
+      var subject = 'Enquiry — ' + (serviceLabel || 'Logistics services');
       var lines = [
         'Name: ' + get('name'),
         'Company: ' + get('company'),
@@ -188,11 +220,55 @@
       if (get('origin') || get('destination')) {
         lines.push('Route: ' + (get('origin') || '—') + ' → ' + (get('destination') || '—'));
       }
-      lines.push('Service: ' + serviceLabel, '', get('message'));
-
+      lines.push('Service: ' + (serviceLabel || ''), '', get('message'));
       window.location.href = 'mailto:logistics@akitagn.com'
         + '?subject=' + encodeURIComponent(subject)
         + '&body=' + encodeURIComponent(lines.join('\n'));
+    };
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var service = form.elements.service;
+      var serviceLabel = service && service.selectedIndex > 0 && service.options[service.selectedIndex]
+        ? service.options[service.selectedIndex].textContent.trim() : '';
+
+      if (!get('name') || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(get('email'))) {
+        formStatus(form, 'invalid', true);
+        return;
+      }
+
+      var payload = {
+        kind: 'quote',
+        name: get('name'),
+        company: get('company'),
+        email: get('email'),
+        phone: get('phone'),
+        origin: get('origin'),
+        destination: get('destination'),
+        service: serviceLabel,
+        message: get('message'),
+        lang: formLang(),
+        website: get('website')
+      };
+
+      var ctl = window.AbortController ? new AbortController() : null;
+      if (ctl) setTimeout(function () { ctl.abort(); }, 6000);
+
+      fetch(API_BASE + '/api/enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        signal: ctl ? ctl.signal : undefined
+      }).then(function (r) { return r.json(); })
+        .then(function (j) {
+          if (!j || !j.ok) throw new Error('api');
+          form.reset();
+          formStatus(form, 'ok', false);
+        })
+        .catch(function () {
+          formStatus(form, 'fallback', true);
+          openMailto(serviceLabel);
+        });
     });
   }
 

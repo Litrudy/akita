@@ -2088,3 +2088,12 @@ html[lang="zh-CN"] .news-title { font-weight: 600; }
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
+
+/* enquiry form status line (API submit feedback) */
+.ff-status {
+  flex-basis: 100%;
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+.ff-status.is-error { color: #d66a5a; }

@@ -11,3 +11,8 @@ Thumbs.db
 
 # content source materials - keep local only
 AKITA_Build/
+
+# backend: local config, dependencies, uploaded files
+server/.env
+server/node_modules/
+uploads/
