@@ -26,9 +26,16 @@ app.use(cors({
   maxAge: 86400
 }));
 
-/* admin panel (static) + admin API + public news API */
+/* uploaded images (served with a long cache; filenames are content-random) */
+app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads'), {
+  maxAge: '30d',
+  fallthrough: true
+}));
+
+/* admin panel (static) + admin API + upload + public news API */
 app.use('/admin', express.static(path.join(__dirname, 'admin')));
 app.use('/api/admin', require('./admin-api'));
+app.use('/api/admin', require('./upload'));
 app.use('/api/news', require('./news-api'));
 
 /* rate limit public submissions: 10 / 10 minutes / IP */

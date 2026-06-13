@@ -63,6 +63,7 @@ function newsPayload(body) {
     position: Number.isFinite(Number(b.position)) ? Number(b.position) : 0,
     status: b.status === 'published' ? 'published' : 'draft',
     meta_label: str(b.meta_label, 160),
+    image: str(b.image, 255),
     category_en: str(b.category_en, 120),
     category_fr: str(b.category_fr, 120),
     category_zh: str(b.category_zh, 120),
@@ -108,13 +109,13 @@ router.post('/news', requireAdmin, async (req, res) => {
   }
   try {
     const [r] = await pool.execute(
-      `INSERT INTO news (slug, position, status, meta_label,
+      `INSERT INTO news (slug, position, status, meta_label, image,
          category_en, category_fr, category_zh,
          title_en, title_fr, title_zh,
          subtitle_en, subtitle_fr, subtitle_zh,
          body_en, body_fr, body_zh, facts, published_at)
-       VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?, ${n.status === 'published' ? 'NOW()' : 'NULL'})`,
-      [n.slug, n.position, n.status, n.meta_label,
+       VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?, ${n.status === 'published' ? 'NOW()' : 'NULL'})`,
+      [n.slug, n.position, n.status, n.meta_label, n.image,
        n.category_en, n.category_fr, n.category_zh,
        n.title_en, n.title_fr, n.title_zh,
        n.subtitle_en, n.subtitle_fr, n.subtitle_zh,
@@ -137,7 +138,7 @@ router.put('/news/:id', requireAdmin, async (req, res) => {
   }
   try {
     const [r] = await pool.execute(
-      `UPDATE news SET slug=?, position=?, status=?, meta_label=?,
+      `UPDATE news SET slug=?, position=?, status=?, meta_label=?, image=?,
          category_en=?, category_fr=?, category_zh=?,
          title_en=?, title_fr=?, title_zh=?,
          subtitle_en=?, subtitle_fr=?, subtitle_zh=?,
@@ -147,7 +148,7 @@ router.put('/news/:id', requireAdmin, async (req, res) => {
            WHEN ? = 'draft' THEN NULL
            ELSE published_at END
        WHERE id = ?`,
-      [n.slug, n.position, n.status, n.meta_label,
+      [n.slug, n.position, n.status, n.meta_label, n.image,
        n.category_en, n.category_fr, n.category_zh,
        n.title_en, n.title_fr, n.title_zh,
        n.subtitle_en, n.subtitle_fr, n.subtitle_zh,

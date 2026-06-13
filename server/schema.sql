@@ -43,6 +43,7 @@ CREATE TABLE IF NOT EXISTS news (
   subtitle_en  VARCHAR(255)  NOT NULL DEFAULT '',
   subtitle_fr  VARCHAR(255)  NOT NULL DEFAULT '',
   subtitle_zh  VARCHAR(255)  NOT NULL DEFAULT '',
+  image        VARCHAR(255)  NOT NULL DEFAULT '',
   body_en      MEDIUMTEXT    NULL,
   body_fr      MEDIUMTEXT    NULL,
   body_zh      MEDIUMTEXT    NULL,

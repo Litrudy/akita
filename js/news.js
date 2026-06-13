@@ -42,6 +42,17 @@
       container.appendChild(head);
 
       var art = el('article', 'news-item');
+
+      if (it.image) {
+        var fig = el('figure', 'news-photo');
+        var img = el('img');
+        img.src = (API_BASE || '') + it.image;
+        img.alt = pick(it, 'title', l);
+        img.loading = 'lazy';
+        fig.appendChild(img);
+        art.appendChild(fig);
+      }
+
       if (it.meta_label) art.appendChild(el('p', 'news-meta mono', it.meta_label));
       art.appendChild(el('h2', 'news-title', pick(it, 'title', l)));
 

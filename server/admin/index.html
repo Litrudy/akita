@@ -119,6 +119,15 @@
         <label>Meta 标签行（等宽小字，如 JIB · DORALEH MULTIPURPOSE PORT）</label>
         <input id="f_meta_label">
 
+        <label>主图（可空；自动压缩为 WebP，最长边 1600px）</label>
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+          <input type="file" id="f_imagefile" accept="image/jpeg,image/png,image/webp" style="flex:1;min-width:220px">
+          <button class="btn ghost btn-sm" id="btnUpload" type="button">上传图片</button>
+          <button class="btn ghost btn-sm" id="btnClearImg" type="button">移除</button>
+        </div>
+        <input id="f_image" placeholder="/uploads/news/... （上传后自动填入，也可手填路径）" style="margin-top:8px">
+        <div id="imgPreview" style="margin-top:10px"></div>
+
         <fieldset><legend>英文 EN</legend>
           <div class="row2">
             <div><label>栏目（如 Network expansion）</label><input id="f_category_en"></div>
@@ -188,7 +197,7 @@
     });
   };
 
-  var FIELDS = ['slug', 'position', 'status', 'meta_label',
+  var FIELDS = ['slug', 'position', 'status', 'meta_label', 'image',
     'category_en', 'category_fr', 'category_zh',
     'title_en', 'title_fr', 'title_zh',
     'subtitle_en', 'subtitle_fr', 'subtitle_zh',
@@ -255,18 +264,52 @@
     $('btnDelete').classList.toggle('hidden', !editingId);
     $('editorTitle').textContent = editingId ? ('编辑 #' + editingId) : '新建新闻';
     FIELDS.forEach(function (f) { $('f_' + f).value = f === 'position' ? 0 : (f === 'status' ? 'draft' : ''); });
+    $('f_imagefile').value = '';
     if (editingId) {
       api('/api/admin/news/' + editingId).then(function (j) {
         if (!j.ok) return;
         FIELDS.forEach(function (f) { $('f_' + f).value = j.item[f] == null ? '' : j.item[f]; });
+        renderImgPreview();
         pane('editor');
       });
     } else {
+      renderImgPreview();
       pane('editor');
     }
   }
   $('btnNewArticle').onclick = function () { openEditor(null); };
   $('btnBackToList').onclick = function () { pane('news'); loadNews(); };
+
+  /* ---- image upload ---- */
+  function renderImgPreview() {
+    var v = $('f_image').value.trim();
+    $('imgPreview').innerHTML = v
+      ? '<img src="' + esc(v) + '" alt="" style="max-width:280px;border:1px solid var(--line);border-radius:4px">'
+      : '';
+  }
+  $('f_image').addEventListener('input', renderImgPreview);
+  $('btnClearImg').onclick = function () { $('f_image').value = ''; $('f_imagefile').value = ''; renderImgPreview(); };
+  $('btnUpload').onclick = function () {
+    var file = $('f_imagefile').files[0];
+    var m = $('editorMsg');
+    if (!file) { m.className = 'msg err'; m.textContent = '请先选择图片文件'; return; }
+    var fd = new FormData();
+    fd.append('image', file);
+    m.className = 'msg'; m.textContent = '上传中…';
+    fetch('/api/admin/upload', { method: 'POST', credentials: 'same-origin', body: fd })
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        if (j.ok) {
+          $('f_image').value = j.url; renderImgPreview();
+          m.className = 'msg ok'; m.textContent = '图片已上传';
+        } else {
+          m.className = 'msg err';
+          m.textContent = j.error === 'file_too_large' ? '图片过大（上限 8MB）'
+            : j.error === 'unsupported_type' ? '仅支持 JPG / PNG / WebP' : '上传失败：' + j.error;
+        }
+      })
+      .catch(function () { m.className = 'msg err'; m.textContent = '无法连接服务器'; });
+  };
 
   $('btnSave').onclick = function () {
     var payload = {};

@@ -7,7 +7,7 @@ const { pool } = require('./db');
 
 const router = express.Router();
 
-const NEWS_FIELDS = `id, slug, position, meta_label,
+const NEWS_FIELDS = `id, slug, position, meta_label, image,
   category_en, category_fr, category_zh,
   title_en, title_fr, title_zh,
   subtitle_en, subtitle_fr, subtitle_zh,

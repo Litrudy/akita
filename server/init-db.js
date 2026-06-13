@@ -8,6 +8,17 @@ const fs = require('fs');
 const path = require('path');
 const mysql = require('mysql2/promise');
 
+async function addColumnIfMissing(conn, db, table, column, alterSql) {
+  const [rows] = await conn.query(
+    `SELECT COUNT(*) AS n FROM information_schema.columns
+     WHERE table_schema = ? AND table_name = ? AND column_name = ?`,
+    [db, table, column]);
+  if (rows[0].n === 0) {
+    await conn.query(alterSql);
+    console.log(`migrated — added ${table}.${column}`);
+  }
+}
+
 async function main() {
   const sql = fs.readFileSync(path.join(__dirname, 'schema.sql'), 'utf8');
 
@@ -19,11 +30,19 @@ async function main() {
     multipleStatements: true
   });
 
+  const dbName = process.env.DB_NAME || 'akita_site';
+
   try {
     await conn.query(sql);
+
+    /* idempotent migrations for columns added after first install
+       (CREATE TABLE IF NOT EXISTS won't alter an existing table) */
+    await addColumnIfMissing(conn, dbName, 'news', 'image',
+      "ALTER TABLE news ADD COLUMN image VARCHAR(255) NOT NULL DEFAULT '' AFTER subtitle_zh");
+
     const [rows] = await conn.query(
       "SELECT COUNT(*) AS n FROM information_schema.tables WHERE table_schema = ? AND table_name = 'enquiries'",
-      [process.env.DB_NAME || 'akita']
+      [dbName]
     );
     console.log(rows[0].n === 1
       ? `OK — database "${process.env.DB_NAME || 'akita_site'}" ready, table "enquiries" exists.`
