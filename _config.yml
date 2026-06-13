@@ -1,0 +1,8 @@
+# GitHub Pages (Jekyll) config.
+# Keep the backend in the repo for deployment, but do NOT publish it on
+# the public Pages site — exclude server-side code and source materials.
+exclude:
+  - server
+  - AKITA_Build
+  - _source
+  - README.md
